@@ -46,6 +46,7 @@ Ik heb alle nodige Datacamp courses voltooit. Ik had al een beetje Python voorke
 
 ![cert](/Data/datacamp1.png)
 ![cert](/Data/datacamp2.png)
+ </details>
 
 
 # 3. Research project
