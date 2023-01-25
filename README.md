@@ -9,37 +9,39 @@
 [1. Introductie](#1-Introductie)\
 [2. Datacamp courses](#2-Datacamp-courses)\
 [3. Research project](#3-Research-project)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.1 Task definition](#41-Task-definition)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.2 Evaluation](#42-Evaluation)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.3 Conclusions](#43-Conclusions)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.4 Planning](#44-Planning)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.1 Task definition](#31-Task-definition)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.2 Evaluation](#32-Evaluation)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.3 Conclusions](#33-Conclusions)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.4 Planning](#34-Planning)\
 [4. Predictive Analytics](#4-Predictive-Analytics)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4.1 Selecting a Model](#51-Selecting-a-Model)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4.2 Configuring a Model](#52-Configuring-a-Model)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4.3 Training a model](#53-Training-a-model)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4.4 Evaluating a model](#54-Evaluating-a-model)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4.5 Visualizing the outcome of a model (explanatory)](#55-Visualizing-the-outcome-of-a-model-explanatory)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4.1 Selecting a Model](#41-Selecting-a-Model)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4.2 Configuring a Model](#42-Configuring-a-Model)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4.3 Training a model](#43-Training-a-model)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4.4 Evaluating a model](#44-Evaluating-a-model)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4.5 Visualizing the outcome of a model (explanatory)](#45-Visualizing-the-outcome-of-a-model-explanatory)\
 [5. Domain knowledge](#5-Domain-knowledge)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[5.1 Introduction of the subject field](#61-Introduction-of-the-subject-field)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[5.2 Literature research](#62-Literature-research)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[5.3 Explanation of Terminology, jargon and definitions](#63-Explanation-of-Terminology-jargon-and-definitions)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[5.1 Introduction of the subject field](#51-Introduction-of-the-subject-field)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[5.2 Literature research](#52-Literature-research)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[5.3 Explanation of Terminology, jargon and definitions](#53-Explanation-of-Terminology-jargon-and-definitions)\
 [6. Data preprocessing](#6-Data-preprocessing)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6.1 Data exploration](#71-Data-exploration)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6.2 Data cleansing](#72-Data-cleaning)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6.3 Data preparation](#73-Data-preparation)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6.4 Data explanation](#74-Data-explanation)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6.5 Data visualization (exploratory)](#75-Data-visualization-exploratory)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6.1 Data exploration](#61-Data-exploration)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6.2 Data cleansing](#62-Data-cleaning)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6.3 Data preparation](#63-Data-preparation)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6.4 Data explanation](#64-Data-explanation)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6.5 Data visualization (exploratory)](#65-Data-visualization-exploratory)\
 [7. Communication](#7-Communication)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.1 Presentations](#81-Presentations)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.2 Writing paper](#82-Writing-paper)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.1 Presentations](#71-Presentations)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.2 Writing paper](#72-Writing-paper)
 
 # 1. Introductie
 
-In dit portfolio lees je over mijn deelnamen aan de minor Applied Data Science als student ICT Software Engineering.
+Dit is mijn portfolio waar ik zal doornemen to all mijn contributies. Voor dit project is niet alleen een groeps research project uitgevoerd maar heb ik ook een indiviuele uitgevoerd aangezien ik en de rest mijn van mijn groep 2 verschillende stukjes aanpakte van het container project.
+
+Mijn contributie aan voor het research project vind je in deze 2 files
+[Research_Validatie](documenten/Research Paper ADS.pdf)
+[Conclusie_Discussie](documents/Research Paper ADS.pdf)
 
 # 2. Datacamp courses
-
-Ik heb alle nodige Datacamp courses voltooit. Ik had al een beetje Python voorkennis, maar ik heb besloten om alle courses te maken. Dit heb ik gedaan, omdat ik alleen nog maar basis kennis had over Python en ik wist niets over alle library's die gebruikt worden in data science. Ik heb geen moeilijkheden ondervonden bij het maken van de courses
 
 <details>
 <summary>Open om alle <i>Statements of Accomplishments</i> te zien</summary>
@@ -53,20 +55,30 @@ Ik heb alle nodige Datacamp courses voltooit. Ik had al een beetje Python voorke
 
 ## 3.1 Task definition
 
-Zoals word benoemd in [5.1 Introduction of the subject field](#51-Introduction-of-the-subject-field) zijn wij onderdeel van het Smart Teddy project. Ons doel is het classifiseren van emoties uit audio.
+Zoals in de introductie is genoemd zijn er 2 research projecten gemaakt waarbij ik aan beide heb gewerkt
+De groeps hoofdvraag gaat als volgt:
 
-Onze hoofdvraag is als volgt:
+> Hoe kunnen we de containers op de kade zo optimaal mogelijk neerzetten zodat de zeevaartschepen zo min mogelijk hoeven te wachten?
+Aan de hoofdvraag kunt u zien dat deze hoofdvraag maar een onderdeel betreft van het proces van cofano namelijk het indelen van de kade maar in het echte leven zijn er ook andere gebieden waar gelet op moet worden. Gebieden zoals het evalueren van de kade en het inladen van de containers op de zeeschepen. Ik heb me voornamelijk gericht op het evalueren van de kade met als hoofdvraag:
 
-> Which machine learning models achieve the highest precision classifying emotions, using datasets containing audio with labeled vocal emotional expressions recorded in a professional recording studio, in order to recognize emotions within household environments?
-Zoals je ziet specificeren wij niet in de hoofdvraag dat ons project voor dementerende senioren is. Dit kunnen wij namelijk aan het einde van ons onderzoek helemaal niet bewijzen, omdat wij niet beschikken over audio fragmenten van dementerende senioren. Wel hebben wij besloten om huishoudelijke achtergrond geluiden toe te voegen aan onze audio dataset. Dit hebben wij gedaan om onze data zo goed mogelijk te laten lijken op de data hoe deze er uiteindelijk zou gaan uitzien.
+> Hoe kunnen we de opstelling op de kade evalueren om tot een optimale oplossing te komen?
+Dit hoofdvraag brengt deelproblemen met zich mee die niet in het onderzoek behandeld worden maar wel rekening mee gehouden moet worden. Een voorbeeld is hoe kunnen we rekening houden met random events zoals bijvoorbeeld dat de planning van zeevaarschepen afwijkt.
+
+Voor het foodboost probleem was er ook een hoofdvraag geformuleerd namelijk:
+> Hoe kunnen we op de beste manieer recepten recommenden aan gebruikers.
+Het probleem is namelijk dat we een app moeten bouwen die recepten kan recommenden aan gebruikers die bepaalde behoeftes kunnen hebben. behoeftes zoals bijvoorbeeld dat ze geen vlees eten of dat ze voornamelijk deserts willen eten bijvoorbeeld. Het probleem is namelijk dat er ook geen user data is die we kunnen gebruiken. Hiervoor wordt er gebruik gemaakt van een recipes and reviews dataset van kaggle waarbij user duidelijk hebben aangegeven welke rating ze voor een bepaald gerecht geven. De datasets komen van:  https://www.kaggle.com/datasets/irkaal/foodcom-recipes-and-reviews
 
 ## 3.2 Evaluation
 
-Voor future work zou ik een gelabelde dataset opzetten die bestaat uit emoties opgenomen door Smart Teddy die bij een senior in het huis staat. Ik zou dan testen hoe ons model scoort op de echte data van senioren en niet op audio ingesproken door acteurs. Veder kan je ook nog ons model testen op langere samples. De datasets die wij hebben gebruikt spreken de acteurs allemaal 1 zin. Volgens de Harvard hersenwetenschapper Dr. Jill Bolte Taylor [90 Seconds to Emotional Resilience](https://www.alysonmstone.com/90-seconds-to-emotional-resilience/) duurt een emotie vaak 90 seconden. Misschien zou ons model beter reageren op langere sampels, omdat hierin dan duidelijker blijkt dat de persoon een bepaalde emotie toont.
+Voor het hoofdonderzoek zou er meerdere aanpassingen gedaan moeten worden. De reward functie zou schaalbaar moeten zijn zonder dat de code aangepast hoeft te worden. De observation zou rekening moeten kunnen houden met de verwachte volgorde van zeeschepen. Snelheid optimaliseren is zeker ook een optie aangezieen het 5 minuten duurt om een lege 3x3x3 te vullen en verder zou er een stapsgewijze evaluatie toegevoegd moeten worden.
+
+Voor toekomstig werk in mijn indiviuele container project zou ik het evaluatie spel dat ik gemaakt hebben verder uitbreiden met functionaliteit. Hoe het nu werkt is in principe een 2d spel om de kortste route te vinden. Alhoewel leuk blijft inferieur vergeleken met bijvoorbeeld dijkstra die het werk van mijn spel in een paar micro seconden kan doen. Om de applicatie uittebreiden zou ik ervoor zorgen dat de agent een container kan oppaken en verplaatsen om bij andere containers te komen. Verder zou ik de environment de hoogte in brengen om meer complexiteit te intergreren en het wat meer te laten lijken op een yard van cofano. Rekening houden ment de volgorde van zeeschepen is ook iets wat geimplemteerd zou moeten en vooral als we het concept van random event introduceren.
+
+Voor het foodboost project zou er verdere functionaliteit kunnen worden geimplementeerd worden in het filteren van recepten. Nu werkt het nog inmiddels met collaborative filtering wat houdt dat recepten worden aangeboden op basis wat soort gelijke user hebben gegeten. maar dat houdt geen rekening met bijvoorbeeld dat een gerecht vegetarisch moet zijn of bijvoorbeeld weingig koolhydraten.
 
 ## 3.3 Conclusions
 
-Uit onze conclusie blijkt dat wij met een precision van 84% emoties kunnen classifiseren op onze gecombineerde dataset. Voor ons project hebben wij ook onze ook huishoudelijke achtergrond geluiden toegevoegd. Dit hebben wij gedaan om onze samples meer te laten lijken op de huishoudelijke omgeving van de senioren. Met het toevoegen van de achtergrond geluiden resulteerde dit op een precision van 80%. Dit resulteerd dus in een iets lagere precision. Hieruit kunnen wij concluderen dat ons model goed gebruikt zo kunnen worden in de zorg.
+Voor het container project 
 
 ## 3.4 Planning
 
