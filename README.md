@@ -44,8 +44,8 @@ Ik heb alle nodige Datacamp courses voltooit. Ik had al een beetje Python voorke
 <details>
 <summary>Open om alle <i>Statements of Accomplishments</i> te zien</summary>
 
-![cert](./Data/datacamp1.png)
-![cert](./Data/datacamp2.png)
+![cert](./datacamp/datacamp1.png)
+![cert](./datacamp/datacamp2.png)
  </details>
 
 
