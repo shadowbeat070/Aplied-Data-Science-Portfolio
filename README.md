@@ -34,9 +34,35 @@
 
 Dit is mijn portfolio waar ik zal doornemen to all mijn contributies. Voor dit project is niet alleen een groeps research project uitgevoerd maar heb ik ook een indiviuele uitgevoerd aangezien ik en de rest mijn van mijn groep 2 verschillende stukjes aanpakte van het container project.
 
-Mijn contributie aan voor het research project vind je in deze 2 files
+Mijn contributie aan voor het schrijven van het research project vind je in deze 2 files
 [Research_Validatie](documenten/Research Paper ADS.pdf)
 [Conclusie_Discussie](documents/ADS_Research_v3.pdf)
+
+Ander Notebooks met korte uitleg die van toepassing zijn voor de portfolio zijn:
+
+[Visualisatie-Gif](notebooks/2023-01-13 14-16-55.mkv)
+>Visualisatie voor de container environment, de cirkel is de agent die leert om optimaal mogelijk de target container te pakken(rood) en dummy containers vermijden(groen en blauw)
+
+[Concept Create Users.csv](notebooks/Fakers.ipynb)
+>in deze notebook wordt een userscsv bestand gemaakt door middel van 100 user id's te maken met elk 10 entries in de csv bestand(dit zijn dan 1000 rijen in de csv). verder wordt aan elke recept een globale rating gegeven(elk instantie van de recept id heeft dezelfde rating). daarna worden er aan elke user een random tage meegegeven waarop basis daarvan 10 random recepten gekozen worden die die tag bezitten. de id's van deze 10 recepten worden aan de csv toegevoegd samen met de bijbehornede rating. [Users.csv](Data/users.csv)
+
+[Csv files merge foodboost](notebooks/Food_Merge_2_Mo (1).ipynb)
+>in deze file worden de 4 foodboost dataset (tags, ingredients, recepis en nutritions) in 1 dataset samengevoegd. [merge bestand](Data/food_merge_2.csv)
+
+[Concept create simusers redacted](notebooks/Simur.ipynb)
+>oud en fout concept om simulated users te maken door middel van objecten te maken.
+
+[Concept Neural network Recommender](notebooks/main.ipynb)
+>neuraal netwerk die ik van het internet heb afgehaald en heb aangepast om een andere dataset te gebruiken(dit notebook was voornamelijk bedoeld om te leren en is geen contributie aan mijn portfolio)
+
+[Container environment](notebooks/mint.py)
+>De environment die ik heb gemaakt voor het container project. 5x5 grid met container (gekleurde vakjes) met een agent die leert om de juiste contaier te pakken van de juiste kant zoder tegen andere containers aan te botsen of te pakken. 
+
+[Prediction model recipes](notebooks/pred.ipynb)
+>prediction model met de surprise library die op basis van ratings users gaat vergelijken en op basis daarvan voorspellingen maken. Er wordt gebruik gemaakt van de surprise library
+
+[Concept Visual for containers](notebooks/visual.py)
+>concept grid voor di visualisatie van de container environment
 
 # 2. Datacamp courses
 
