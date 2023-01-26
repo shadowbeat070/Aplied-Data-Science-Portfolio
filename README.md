@@ -231,7 +231,8 @@ er is geen data gecleaned aangezien de datasets van internet zijn gehaald
 [Csv files merge foodboost](notebooks/Food_Merge_2_Mo (1).ipynb)
 >in deze file worden de 4 foodboost dataset (tags, ingredients, recepis en nutritions) in 1 dataset samengevoegd. [merge bestand](Data/food_merge_2.csv)
 
-Voor de prediction model is voornamelijk gebruik gemaakt van de recipes and reviews datasets van kaggle. 
+Voor de prediction model is voornamelijk gebruik gemaakt van de recipes and reviews datasets van kaggle. Van de reviews dataset wordt voornamelijk: AuthorId, RecipeId en Rating gebruikt.
+
 ## 6.5 Data visualization (exploratory)
 
 Data is niet gevisualiseerd behalve dat de collommen worden geprint in een notebook
