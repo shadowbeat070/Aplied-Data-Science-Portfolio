@@ -29,6 +29,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6.3 Data preparation](#63-Data-preparation)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6.4 Data explanation](#64-Data-explanation)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6.5 Data visualization (exploratory)](#65-Data-visualization-exploratory)\
+[7. Communication](#7-Communication)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.1 Presentations](#71-Presentations)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.2 Writing paper](#72-Writing-paper)
+
 
 # 1. Introductie
 
@@ -180,7 +184,7 @@ Voor foodboost project is het probleem dat er recepten aanbevolen moeten worden 
 ## 5.2 Literature research
 
 foodboost project:
-recommendations systemen zijn geen nieuw onderwerp, er is al veel onderzoek naar gedaan en meerdere mogelijkheden uigeprobeerd. De meeste grote bedijven zijn overgestapt naar een collaborative filtering systeem wat inhoud dat de data van gelijkwaardige users gebruikt wordt om aanbevelingen te geven aan die users.
+recommendations systemen zijn geen nieuw onderwerp, er is al veel onderzoek naar gedaan en meerdere mogelijkheden uigeprobeerd. De meeste grote bedrijven zijn overgestapt naar een collaborative filtering systeem wat inhoud dat de data van gelijkwaardige users gebruikt wordt om aanbevelingen te geven aan die users.
 
 Ik heb vervolgens de volgende onderzoeken gelezen:
 
@@ -209,54 +213,41 @@ Ik heb vervolgens de volgende onderzoeken gelezen:
 
 ## 6.1 Data exploration
 
-Jaap heeft zich bezig gehouden met de data exploration. Ik heb daar veder geen bijdragen aan geleverd.
+De container datasets geven weinig toegevoegde waarde aangezien de datasets over de opstelling, inhoud en de machines die op de kade staan. Het is lastig om met deze dataset een prediction model te maken en zelfs als dat kon zou het weinig toegevoegde waarde hebben. Daarom wordt er synthetische data gemaakt voor hetn trainen van de container environment. Voor elke game wordt er een random opstelling van max 3x3 containers geplaats met minimaal 1 target container. Dit wordt random gedaan door middel van de numpy random function.
+
+voor de foodboost project was in eerste instantie het idee om de 4 default datasets te gebruiken(ingredients, recipes, nutritions en tags) alleen vielen we daar mee steeds door de mand. Daarom koos ik voor een andere aanpak heb een compleet nieuwe dataset gebruikt van kaggle die meer data en kollommen bevat zoals bijvoorbeeld reviews die gebruikt worden voor de prediction model.
 
 ## 6.2 Data cleaning
 
-De audio bestanden uit onze dataset beginnen en eidigen vaak met een stuk silte. Wij hebben librosa gebruikt om deze stilte eraf te trimmen. Dit leide namelijk tot een betere presatie van de models.
-
-```py
-def _process_audio(value):
-    x, sample_rate = librosa.load(value['file_path'], sr=44100)
-    x, index = librosa.effects.trim(x, top_db=20)
-    return x, sample_rate
-```
+er is geen data gecleaned aangezien de datasets van internet zijn gehaald
 
 ## 6.3 Data preparation
 
-Voor data preparation/preprocessing heb ik meerde dingen gedaan.
-
-Helemaal in het begin had ik een pipeline voor het processen van audio files naar MFCC. Zie hier het [notebook](assets/notebooks/mfcc.ipynb). Deze pipeline hebben wij in het vervolg van het project niet meer gebruikt.
-
-Julian heeft in dit project de pipeline opgezet. Deze bestaat uit `Generators`, `DatasetLoaders` en `Processables`. Later in het project heb ik augmentation toe gevoegd aan de pipeline voor de data van de CNN. Zie hier een implementatie van de [processable met augmentation](assets/notebooks/processable.ipynb). Na het testen met de augmentation had dit alleen maar negatief effect op de CNN en hebben wij dit niet gebruikt. Veder heb ik ook nog een aantal imlementaties gemaakt op basis van de `DatasetLoader`. [zie hier het notebook](assets/notebooks/dataset_loader.ipynb). Ik heb niet alle implementaties gemaakt in dit notebook.
+[Concept Create Users.csv](notebooks/Fakers.ipynb)
+>in deze notebook wordt een userscsv bestand gemaakt door middel van 100 user id's te maken met elk 10 entries in de csv bestand(dit zijn dan 1000 rijen in de csv). verder wordt aan elke recept een globale rating gegeven(elk instantie van de recept id heeft dezelfde rating). daarna worden er aan elke user een random tage meegegeven waarop basis daarvan 10 random recepten gekozen worden die die tag bezitten. de id's van deze 10 recepten worden aan de csv toegevoegd samen met de bijbehornede rating. [Users.csv](Data/users.csv)
 
 ## 6.4 Data explanation
 
-Voor dit project hebben wij meerdere datasets gecombineerd tot een grote dataset. Wij hebben de volgende datasets gebruikt:
+[Csv files merge foodboost](notebooks/Food_Merge_2_Mo (1).ipynb)
+>in deze file worden de 4 foodboost dataset (tags, ingredients, recepis en nutritions) in 1 dataset samengevoegd. [merge bestand](Data/food_merge_2.csv)
 
-1. [CREMA-D](https://www.kaggle.com/ejlok1/cremad)
-2. [RAVDESS](https://www.kaggle.com/uwrfkaggler/ravdess-emotional-speech-audio)
-3. [SAVEE](https://www.kaggle.com/barelydedicated/savee-database)
-4. [TESS](https://www.kaggle.com/ejlok1/toronto-emotional-speech-set-tess)
-
-|                      | RAVDESS                                                                | CREMA-D                                             | TESS                                                           | SAVEE                                                          |
-| -------------------- | ---------------------------------------------------------------------- | --------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| Aantal samples       | 7356                                                                   | 7442                                                | 2800                                                           | 480                                                            |
-| Aantal audio samples | 1440                                                                   | 7442                                                | 2800                                                           | 480                                                            |
-| Aantal acteurs       | 24 (12 man, 12 vrouw)                                                  | 91 (48 man, 43 vrouw)                               | 2 (0 man, 2 vrouw)                                             | 4 (4 man, 0 vrouw)                                             |
-| Emoties              | Anger<br>Disgust<br>Fear<br>Happy<br>Neutral<br>Sad<br>Calm<br>Suprise | Anger<br>Disgust<br>Fear<br>Happy<br>Neutral<br>Sad | Anger<br>Disgust<br>Fear<br>Happy<br>Neutral<br>Sad<br>Suprise | Anger<br>Disgust<br>Fear<br>Happy<br>Neutral<br>Sad<br>Suprise |
-
-Zoals je ziet heeft niet elke dataset dezelfde emoties. Wij hebben dan ook samen met Dr. Hani al-Ers besproken om op de volgende emoties te focussen:
-
-- Anger
-- Happy
-- Neutral
-- Sad
-
+Voor de prediction model is voornamelijk gebruik gemaakt van de recipes and reviews datasets van kaggle. 
 ## 6.5 Data visualization (exploratory)
 
-Wij hebben dit project voornaamlijk gewerkt met audio data. Audio kan je op veel manieren weergeven. Een van de meest gebruikte manieren is een spectrogram. Hieronder zie je twee verschillende samples. De eerste is van een neutrale sample en de tweede is een angry sample. Je kunt wel verschil zien tussen de twee spectrogramen, maar audio blijft wel een van de moeilijkere dingen om af te lezen. [Dit artiekel](https://www.izotope.com/en/learn/understanding-spectrograms.html) heeft mij erg geholpen met het beter kunnen lezen van spectrogrammen.
+Data is niet gevisualiseerd behalve dat de collommen worden geprint in een notebook
 
-![neutral spectrogram](assets/images/neu-spec.png)
-![angry spectrogram](assets/images/ang-spec.png)
+# 7. Communication
+
+## 7.1 Presentations
+
+Tijdens de internen presentaties nam manen mijn andere groepslede vaak het iniatief om te presenteren. Voor de externe presentaties spraken we van te voren af wie er welk gedeelte zou presenteren. Ik heb een deel gepresenteerd bij de volgende presentaties:
+
+- Externe presentatie 1: heb een demo gegeven van het prediction model voor foodboost
+- Interne presentatie: heb een demo gegeven van de container environment 
+
+## 7.2 Writing paper
+
+Mijn contributie aan voor het schrijven van het research project vind je in deze 2 files
+[Research_Validatie](documenten/Research_Paper_ADS.pdf)
+[Conclusie_Discussie](documents/ADS_Research_v3.pdf)
 
