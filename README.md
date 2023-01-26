@@ -50,7 +50,7 @@ Ander Notebooks met korte uitleg die van toepassing zijn voor de portfolio zijn:
 [Concept Create Users.csv](notebooks/Fakers.ipynb)
 >in deze notebook wordt een userscsv bestand gemaakt door middel van 100 user id's te maken met elk 10 entries in de csv bestand(dit zijn dan 1000 rijen in de csv). verder wordt aan elke recept een globale rating gegeven(elk instantie van de recept id heeft dezelfde rating). daarna worden er aan elke user een random tage meegegeven waarop basis daarvan 10 random recepten gekozen worden die die tag bezitten. de id's van deze 10 recepten worden aan de csv toegevoegd samen met de bijbehornede rating. [Users.csv](Data/users.csv)
 
-[Csv files merge foodboost](notebooks/Food_Merge_2_Mo (1).ipynb)
+[Csv files merge foodboost](notebooks/Food_Merger.ipynb)
 >in deze file worden de 4 foodboost dataset (tags, ingredients, recepis en nutritions) in 1 dataset samengevoegd. [merge bestand](Data/food_merge_2.csv)
 
 [Concept create simusers redacted](notebooks/Simur.ipynb)
@@ -228,7 +228,7 @@ er is geen data gecleaned aangezien de datasets van internet zijn gehaald
 
 ## 6.4 Data explanation
 
-[Csv files merge foodboost](notebooks/Food_Merge_2_Mo (1).ipynb)
+[Csv files merge foodboost](notebooks/Food_Merger.ipynb)
 >in deze file worden de 4 foodboost dataset (tags, ingredients, recepis en nutritions) in 1 dataset samengevoegd. [merge bestand](Data/food_merge_2.csv)
 
 Voor de prediction model is voornamelijk gebruik gemaakt van de recipes and reviews datasets van kaggle. Van de reviews dataset wordt voornamelijk: AuthorId, RecipeId en Rating gebruikt.
