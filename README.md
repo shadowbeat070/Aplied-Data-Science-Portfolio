@@ -29,9 +29,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6.3 Data preparation](#63-Data-preparation)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6.4 Data explanation](#64-Data-explanation)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6.5 Data visualization (exploratory)](#65-Data-visualization-exploratory)\
-[7. Communication](#7-Communication)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.1 Presentations](#71-Presentations)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.2 Writing paper](#72-Writing-paper)
 
 # 1. Introductie
 
@@ -39,7 +36,7 @@ Dit is mijn portfolio waar ik zal doornemen to all mijn contributies. Voor dit p
 
 Mijn contributie aan voor het research project vind je in deze 2 files
 [Research_Validatie](documenten/Research Paper ADS.pdf)
-[Conclusie_Discussie](documents/Research Paper ADS.pdf)
+[Conclusie_Discussie](documents/ADS_Research_v3.pdf)
 
 # 2. Datacamp courses
 
@@ -78,146 +75,109 @@ Voor het foodboost project zou er verdere functionaliteit kunnen worden geimplem
 
 ## 3.3 Conclusions
 
-Voor het container project 
+Voor het container project wordt er bij een model die is ontwikkeld in 350k timesteps gedurende 334 seconden de loss en value loss wordt geminimaliseerd. Het is het model gelukt om bij een yard van 3x3x3 een opstelling optimaal mogelijk ingedeeld te hebben omdat het niet uitmaakt of zeeschip 1,2 of 3 binnenkomt, de stacker kan bij ze allemaal.
+
+Voor het foodboost project kan er geconcludeerd worden dat er goede en passede recommendations gegeven worden. deze worden gegeven door een gridsearch model die op basis van de rating die users hebben gegeven, users kan clusteren en recepten recommenden. Het model kan accuraat aanbevelingen geven aangezien het uieindelijke situatie een rmse geeft van 1. dit houdt in dat de aanbeveling die het model maakt er maximaal 0.5 punten van de rating naast zit. de ratings zijn van 1 tot 5.
 
 ## 3.4 Planning
 
-Als scum omgeving hebben wij GitHub. Wij hebben de GitHub issues gebruikt als stories en de GitHub milestones als sprints. Op deze manier konden wij stories aan sprints toevoegen en deze vervolgens filteren op de sprint.
+Als scrum omgevingen zijn we elke week bij elkaar gekomen om de bespreken hoe ver we zijn en wat er nog gedaan moet worden. Al onze tickets en werkzaamheden zijn via trello en de agile methodiek opgenomen. We hebben daily standups 3x in de week genomen.
 
-![github scrum boaard](assets/images/gh-scrum-board.png)
+<details>
+<summary>Open om alle scrum te zien</summary>
 
-Hier zien je ons scrum board voor sprint 8 (onze laatste sprint). Wij hebben het verdeeld in 4 colommen To do, In progress, waiting for feedback en Done. Op deze manier konden wij tijdens de daily standup gemakkelijk zien waar wij precies stonden in de sprint en welke stories stil stonden, omdat wij bijvoorbeeld op feedback van een docent moesten wachten.
-
-Wij hadden elke dag een daily standup waarin iedereen zijn voortgang deelde met de rest van het team. Ook gebruikte wij dit moment voor als iemand vast zat met een story en hulp nodig had om veder te gaan. Dan werd er met die persoon een moment gepland om er gezamelijk naar te kijken.
-
-Eerst hanteerde wij sprints van 1 week. Na een aantal sprints kwamen we tijdens een retrospective tot de conclusie dat dit te kort is. Wij hebben daarna sprints van 2 weken aangehouden. Op de helft van de sprint hielden wij een refinement waarin we bespraken of alles nog haalbaar was of dat er misschien een paar nieuwe stories bij zouden kunnen komen.
-
-Na elke spring hielden wij een retrospective. Hierin bespraken wij wat er goed ging, wat er minder goed ging en wat er verbeterd moet worden. Wij gebruikte een de tool [Fraankly](https://www.fraankly.com) voor onze retrospectives. Bij deze tool hadden we eerst de tijd om annoniem kaartjes aan te maken voor wat er allemaal goed en niet goed ging. De kaartjes waaren annoniem zodat jouw kaartjes niet beinvloed zouden worden door andere. Daarna moest iedereen zijn kaartjes bespreken en moest er gestemd worden op de kaartjes waar je het meest mee eens was. Op het einde van de retroscpective maakte wij een lijst met _actie punten_. Dit waren punten die wij volgende sprint aandacht aan moeten besteden. Hier maakte wij vervolgens ook stories van zodat deze volgende sprint opgepakt zouden worden.
-
-![retro](assets/images/retro.png)
-
-Wij hebben als groep ook een roadmap gemaakt. Dit vonden wij allemaal erg handig om tijdens de sprint planning naar te kijken. Op deze manier wisten wij of we op schema lagen volgens onze planning. Natuurlijk haalden we dit niet altijd of hadden we dingen verkeerd ingeschat op de roadmap. Dit hebben we dan direct aangepast.
-
-![roadmap](assets/images/roadmap.jpg)
+![cert](./documents/scrum1.png)
+![cert](./documents/scrum2.png)
+![cert](./documents/scrum3.png)
+![cert](./documents/scrum4.png)
+ </details>
+ 
+ zoals u aan screenshot 4 kunnen zien worden sprints verdeeld over 4 kolommen: Backlog, To-Do, In-Progress en To-Check en konden we tijdens de daily standup zien waar iedereen mee bezig was.
 
 # 4. Predictive Analytics
 
 ## 4.1 Selecting a model
 
-Voor het project heb ik een SVM machine learning model gemaakt. Ik heb dit model gekozen, omdat ik tijdens het literatuur onderzoek [dit onderzoek](https://www.sciencedirect.com/science/article/pii/S1746809420300501) heb gevonden. In dit onderzoek word een SVM gebruikt voor het classifiseren van emotie op de RAVDESS dataset.
+voor het foodboost project is er gebruik gemaakt van de gridsearchcv van de surprise library. De surprise library is gekozen aangezien de library bedoeld en gemaakt is om recommendation systemen te maken. gridsearchcv is gekozen omdat dit model de beste scores uiteidelijk gaf. andere modellen die zijn uitgeprobeerd zijn de knnwithmeans, knnbaseline, knnbasic en SVD. Verder Dit wordr ondersteund door de documentatie van die library https://surprise.readthedocs.io/en/stable/getting_started.html#tune-algorithm-parameters-with-gridsearchcv 
 
 ## 4.2 Configuring a Model
 
-Zoals eerder benoemd heeft ieder project lid een machine learning model gekozen om te implementeren. Daarna wilde wij alle resultaten met elkaar vergelijken. Om alles makkelijk te runnen hebben we een `BaseModel` class gemaakt. Elk model overerft deze class.
-
-```py
-class BaseModel():
-    def train(cls):
-        raise NotImplementedError
-    def grid_search():
-        raise NotImplementedError
-    def model_accuracy(model, X_train, X_test, y_train, y_test):
-        # Train accuracy
-        y_pred = model.predict(X_train)
-        accuracy = accuracy_score(y_train, y_pred)
-        print(f"Train accuracy is: {accuracy}")
-        # Test accuracy
-        y_pred = model.predict(X_test)
-        accuracy = accuracy_score(y_test, y_pred)
-        print(f"Test accuracy is: {accuracy}")
-        # Precision score
-        print(f"Precision: {precision_score(y_test, y_pred, average=None)}")
-        print("\nClassification Report:")
-        print(classification_report(y_test, y_pred))
-        # Confusion matrix
-        plot_confusion_matrix(model, X_test, y_test, normalize='true')
-        fig1 = plt.gcf()
-        plt.show()
-        plt.draw
-        fig1.savefig(path + dt)
-```
-
-Samen met Dr. Hani al-Ers zijn wij tot het besluit gekomen om ons te richten op precision. Om tot de beste hyper parameters te komen hebben wij een grid search uitgevoerd. Na het runnen van de grid search waren dit de hyper parameters die eruit kwamen.
+Zoals hiervoor benoemd wordt er gebruik gemaakt de gridsearchcv door het feit dat het model zelf kiest wat de best hyper parameters zijn om tot de laagste rmse te komen. De beste parameters waren dus uiteindelijk:
 
 ```json
 {
-  "C": 10,
-  "gamma": 0.001,
-  "kernel": "rbf"
+  "n_epochs": 100,
+  "lr_all": 0.01,
+  "reg_all": 0.1
 }
 ```
 
-[Zie hier het notebook voor de SVM](assets/notebooks/svm.ipynb)
+[Zie hier het notebook voor de GridSearch](notebooks/pred.ipynb)
 
 ## 4.3 Training a model
 
-Zoals hierboven vermeld heb ik voor het trainen een gridsearch uitgevoerd om tot de optimale hyperparameters te komen. Wij trainde onze modellen op een fysiek gesplite dataset. Dit hebben wij gedaan zodat we de modellen eerlijker kunnen vergelijken met elkaar, omdat ze allemaal op dezelfde data trainen en testen. Na het trainen word in de `BaseModel` de functie `model_accuracy()` aangeroepen. Deze print vervolgens resultaten waarmee wij later de modellen met elkaar kunnen vergelijken.
+Zoals hiervoor benoemd is er een gridsearch gebruikt om tot de optimale hyper parameters te komen. De dataset bestod uit user id's, repect id's en de bijhorende rating. Deze dataset is gesplits in 0.75 aan trainen en 0.25 voor het testen. verder wordt de rmse, mae en de beste paramets geprint die uit de gridsearch zijn gebleken. verder is er een cross validation van 5 meegegeven.
 
 ## 4.4 Evaluating a model
+Het evalueren van het model werd gedaan door middel van veel verschillende modellen uittesten en te vergelijken. uiteindelijk bleek dat dit model de beste resultaten gaf: GridSearchCV(SVD, param_grid, measures=["rmse", "mae"], cv=5, refit = True)
 
-Zoals eerder benoemd hebben we allemaal een model gemaakt die de `BaseModel` oveerft. Daarna heb ik een `moddel_runner` ontwikkeld waarin wij heel simpel alle modellen kunnen runnen op verschillende datasets.
+de hier onder staan de verschillende metrieken and de beste parameters die eruit zijn gekomen.
 
+{'rmse': 1.0379689355371358, 'mae': 0.6200058703029125}
+{'rmse': {'n_epochs': 100, 'lr_all': 0.01, 'reg_all': 0.1}, 'mae': {'n_epochs': 100, 'lr_all': 0.01, 'reg_all': 0.1}}
+
+verder is uitgeprobeerd om een rating prediction te maken: 
 ```py
-# Dit zijn de modellen die gerunt moeten worden
-models = [KNN, SVM, MLP, LogisticalRegression]
-# Loaders zijn helper classen voor het laden van de datasets
-loaders = [RavdessPosNegLoader, CremadPosNegLoader]
-# Variants zijn de varianten op de dataset door middel van augmentatie
-variants = ["OriginalPN", "TrimmedPN", "augmented_PitchDownPN", ...]
-for model in models:
-    for variant in variants:
-        for loader in loaders:
-            print(f"training {model.instance} with {variant} data loaded with {loader.identifier}")
-            data = loader.load_dataset(variant)
-            model.train(data)
+prediction = gs.predict(41, 48730)
+prediction.est
+4.50464
 ```
-
-Op deze manier konden wij veel testen achter elkaar runnen en de outputs loggen naar een file om deze vervolgens te evalueren ([evaluatie bestand](assets/other/evaluation.xlsx)). Met deze informatie konden wij makkelijk bekijken hoe de verschillende modelen reageren op bijvoorbeeld het cleanen of augementeren van de audio. Ook konden wij de resultaten van alle modelen gemakkelijk met elkaar vergelijken voor de evaluatie. Uiteindelijk is er voor het eindproduct geen een van deze modellen gekozen en hebben we ons de laatste tijd gefocust op de CNN die op het moment het beste presteerde.
+in dit geval is er gekeken naar user id 41 en probeert het model te voorspellen wat voor rating user 41 zal geven aan recept 48730.
+het uiteindelijke rating is 4.5 wat houdt in dat recept 48730 een goede aanbeveling zou kunnen zijn. 
+[Zie hier het notebook voor de GridSearch](notebooks/pred.ipynb)
 
 ## 4.5 Visualizing the outcome of a model (explanatory)
 
-Voor de SVM die ik heb gemaakt voor het Smart Teddy project heb ik de uitkomst niet gevisualiseerd. Ons groepje heeft voor de learning lab de SVM besproken. Ik was verantwoordelijk voor het maken van het example notebook. Ik dit notebook heb ik wel de uitkomsten van het model gevisualiseerd. Op deze manier kon ik het effect van hyperparameters laten zien op de decision boundary van het model. [bekijk hier het notebook voor de learning lab](assets/notebooks/learning_lab.ipynb)
+Voor de food boost predictie model die ik gemaakt heb is de uitkomst helaas niet gevisualiseerd. 
+
+voor het evalueren van het container project heb ik wel een visualisatie gemaakt. De visualisatie is een 5x5 grid waarbij de agent(cirkel) de target container moet bereiken(de rode container) en de dummy containers vermijden(groen en blauw).
+[Zie hier het notebook voor de visualisatie](notebooks/2023-01-13 14-16-55.mkv)
 
 # 5. Domain knowledge
 
 ## 5.1 Introduction of the subject field
 
-Ik heb tijdens dit project gewerkt aan het project Smart Teddy. Dit is een project van Dr. Hani al-Ers. De Smart Teddy moet de leef omstandigheden van dementerende senioren verbeteren. Dit kan omdat de Smart Teddy helemaal vol zit met sensoren. Wij waren verantwoordeijk voor het detecteren en classifiseren van emotie. Emotie speelt een belangrijke rol als indicatie voor het welzijn van de senioren. Waneer de senioren bijvoorbeeld vaak boos zijn of juist helemaal geen emotie tonen kan dit betekenen dat zij aan het verslechteren zijn. Helaas was er voor dit project geen echte data beschrikbaar. Wij moesten dus bestaande datasets van acteurs gebruiken. Deze acteurs spraken dan zinnen in verschillende emoties.
+Tijdens het container project heb ik gewerkt aan een evaluatie model die samen gekoppeld zou kunnen worden aan de optimale indeling model van mijn projecct groep. Het container project van cofano heeft het probleem dat de container process niet optimaal verloopt. dit kost tonnen aan geld aangezien de zeevaartschepen op de kade moeten wachten voor hun containers. Vaak zijn er meerdere yards van LxBxH grootte die optimaal ingedeeld moeten worden zodat de zeevaartschepen zo min mogelijk hoeven te wachten. 
+
+Voor foodboost project is het probleem dat er recepten aanbevolen moeten worden aan gebruikers die ze ook daadwerkelijk zouden kunne gebruiken. dit is om zo veel klanten te behouden om te voorkomen dat ze de app verwijderen en nooit meer terug komen.
 
 ## 5.2 Literature research
 
-Emoties classificeren is geen nieuw onderwerp in de wereld van data science. Er zijn al veel mensen die dit al eens gedaan hebben en daar een paper over hebben geschreven. Yuri, Jaap, Zahir en Brenno hadden een story om nuttige onderzoeken te vinden. Daarna hebben zij de meest nuttige door gestuurd naar Julian en ik die op dat moment met een andere stories bezig waren.
+foodboost project:
+recommendations systemen zijn geen nieuw onderwerp, er is al veel onderzoek naar gedaan en meerdere mogelijkheden uigeprobeerd. De meeste grote bedijven zijn overgestapt naar een collaborative filtering systeem wat inhoud dat de data van gelijkwaardige users gebruikt wordt om aanbevelingen te geven aan die users.
 
 Ik heb vervolgens de volgende onderzoeken gelezen:
 
-- [Speech Emotion Detection using IoT based Deep Learning for Health Care](https://ieeexplore.ieee.org/abstract/document/9005638/authors#authors)
-- [A Speech Emotion Recognition Solution-based on Support Vector Machine for Children with Autism Spectrum Disorder to Help Identify Human Emotions](https://ieeexplore.ieee.org/document/9249147)
+- [recommendation-systems-explained](https://towardsdatascience.com/recommendation-systems-explained-a42fc60591ed)
+- [machine learning for recommending systems part 1](https://medium.com/recombee-blog/machine-learning-for-recommender-systems-part-1-algorithms-evaluation-and-cold-start-6f696683d0ed)
+- [machine learning for recommending systems part 2](https://medium.com/recombee-blog/machine-learning-for-recommender-systems-part-2-deep-recommendation-sequence-prediction-automl-f134bc79d66b)
+- [Notebook_Onderzoek](documents/Reccomender Reseasch.txt)
 
-Deze twee onderzoeken gebruikte beide de RAVDESS dataset. Het verschil bij de onderzoeken zit hem vooral in de manier hoe de data word voorbereid en welk model er word gebruikt.
 
-|                     | Speech Emotion Detection using IoT based Deep Learning for Health Care | A Speech Emotion Recognition Solution-based on Support Vector Machine for Children with Autism Spectrum Disorder to Help Identify Human Emotions |
-| ------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Dataset             | RAVDESS                                                                | RAVDESS                                                                                                                                          |
-| Emoties             | happines, sadness, suprised, anger, fearful, disgust                   | happines, sadness, suprised, anger, fearful, disgust                                                                                             |
-| Model               | CNN                                                                    | SVM                                                                                                                                              |
-| Audio preprocessing | Spectrogram                                                            | MFCC's                                                                                                                                           |
-| Accuracy            | 63,9% (met achtergrond geluiden)                                       | zonder augmentation<br>- 78% vrouw <br>- 71% man <br><br>data augmentation<br>- 93% man<br>- 95% vrouw                                           |
 
 ## 5.3 Explanation of Terminology, jargon and definitions
 
-- **Emotie**: Een emotie is een innerlijke beleving of gemoedsbeweging zoals vreugde, angst, boosheid, verdriet en kan door een situatie of gebeurtenis worden opgeroepen [bron](https://nl.wikipedia.org/wiki/Emotie)
-- **Support vector machine (SVM)**: Een set van supervised learning methodes voor classificatie, regressie en outliner detection. [bron](https://scikit-learn.org/stable/modules/svm.html)
-- **Convolutional Neural Network (CNN)**: Een deep learning algoritme wat gebruikt word voor beeldherkenning. [bron](https://www.techtarget.com/searchenterpriseai/definition/convolutional-neural-network)
-- **Augmentatie**: Je maakt meer data door bijvoorbeeld bij elke sample de pitch of de snelheid van je audio te veranderen. [bron](https://en.wikipedia.org/wiki/Data_augmentation)
-- **RAVDESS, CREMA-D, SAVEE, TESS**: Dit zijn de twee datasets die het meeste worden gebruikt bij classifiseren van emotie. Bij deze datasets worden zinnen ingesproken door acteurs in vershillende emoties. [CREMA-D](https://www.kaggle.com/ejlok1/cremad), [RAVDESS](https://www.kaggle.com/uwrfkaggler/ravdess-emotional-speech-audio), [SAVEE](https://www.kaggle.com/barelydedicated/savee-database) & [TESS](https://www.kaggle.com/ejlok1/toronto-emotional-speech-set-tess)
-- **Audio Features**: Het halen van zinvolle informatie uit audiosignalen. [bron](https://www.sciencedirect.com/topics/engineering/audio-feature)
 - **Scrum**: Scrum is een agile framework voor het devolopen van producten in groepen/teams.
-- **Inherentice (OOP)**: Inherentice is het mechanisme van het baseren van een object of klasse op een ander object of klasse, met behoud van een vergelijkbare implementatie. [bron](<https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)>)
-- **Spectrogram**: Een spectrogram is een visuele weergave van het spectrum van frequenties van een audio signaal. [bron](https://en.wikipedia.org/wiki/Spectrogram)
-- **MFCC**: De MFCC zijn de coëfficiënten van het Mel-cepstrum. Het Mel-cepstrum is het cepstrum berekend op de Mel-banden (geschaald naar het menselijk oor) in plaats van het Fourier-spectrum. [bron](https://www.igi-global.com/dictionary/gtm-user-modeling-aiga-weight/18257)
 - **Hyper parameters**: Een waarde die effect heeft op het leer proces van het machine learning model
 - **Grid search**: Grid search is een techniek die probeert de optimale waarden van hyperparameters te berekenen [bron](https://medium.com/fintechexplained/what-is-grid-search-c01fe886ef0a)
 - **Precision**: Precision is een indicator van de prestaties van een machine learning-model, de kwaliteit van een positieve voorspelling van het model [bron](https://c3.ai/glossary/machine-learning/precision/)
+- **Collaborative Filtering**: Collaborative filtering is een methode om automatische voorspellingen (filteren) over de interessen van een gebruiker te maken door voorkeuren of smaakinformatie van veel gebruikers te verzamelen (samenwerken).[bron](https://en.wikipedia.org/wiki/Collaborative_filtering)
+- **Recommendation Systeem**: Een aanbevelingssysteem is een systeem dat beoordelingen voorspelt die een gebruiker aan een specifiek item kan geven. Deze voorspellingen worden vervolgens gerangschikt en teruggekeerd naar de gebruiker.[bron](https://towardsdatascience.com/recommendation-systems-explained-a42fc60591ed)
+- **Yard**: Een containerwerf (CY) is de plek waar zeecontainers voor en na een afvaart worden opgeslagen en waar vervoerders lege containers opslaan.[bron](https://www.flexport.com/glossary/container-yard/#:~:text=A%20container%20yard%20(CY)%20is,%5C)
+- **RMSE**: Root Mean Square Error (RMSE) is de standaarddeviatie van de residuen (voorspellingsfouten). Residuen zijn een maat voor hoe ver de gegevenspunten van de regressielijn verwijderd zijn; RMSE is een maat voor hoe verspreid deze residuen zijn. Met andere woorden, het vertelt u hoe geconcentreerd de gegevens zijn rond de best passende lijn.[bron](https://www.statisticshowto.com/probability-and-statistics/regression-analysis/rmse-root-mean-square-error/)
+- **MAE**: MAE is het gemiddelde van de absolute waarden van de individuele voorspellingsfouten over alle instanties. Elke voorspellingsfout is het verschil tussen de werkelijke waarde en de voorspelde waarde voor de instantie.[bron](https://link.springer.com/referenceworkentry/10.1007/978-0-387-30164-8_525)
+- **Learning Rate**: De Learning Rate is een hyperparameter die bepaalt hoeveel het model moet veranderen in reactie op de geschatte fout telkens wanneer de modelgewichten worden bijgewerkt.[bron](https://machinelearningmastery.com/understand-the-dynamics-of-learning-rate-on-deep-learning-neural-networks/)
+- **Cross-validation**: Cross-validation is een resampling-methode die verschillende delen van de gegevens gebruikt om een model op verschillende iteraties te testen en te trainen. Het wordt voornamelijk gebruikt in omgevingen waar het doel voorspelling is, en men wil inschatten hoe nauwkeurig een voorspellend model in de praktijk zal presteren.[bron](https://en.wikipedia.org/wiki/Cross-validation_(statistics))
 
 # 6. Data preprocessing
 
@@ -225,7 +185,7 @@ Deze twee onderzoeken gebruikte beide de RAVDESS dataset. Het verschil bij de on
 
 Jaap heeft zich bezig gehouden met de data exploration. Ik heb daar veder geen bijdragen aan geleverd.
 
-## 7.2 Data cleaning
+## 6.2 Data cleaning
 
 De audio bestanden uit onze dataset beginnen en eidigen vaak met een stuk silte. Wij hebben librosa gebruikt om deze stilte eraf te trimmen. Dit leide namelijk tot een betere presatie van de models.
 
@@ -274,15 +234,3 @@ Wij hebben dit project voornaamlijk gewerkt met audio data. Audio kan je op veel
 ![neutral spectrogram](assets/images/neu-spec.png)
 ![angry spectrogram](assets/images/ang-spec.png)
 
-# 7. Communication
-
-## 7.1 Presentations
-
-Tijdens de internen presentaties nam Jaap altijd het iniatief om te presenteren. Voor de externe presentaties spraken we van te voren af wie er welk gedeelte zou presenteren. Ik heb een deel gepresenteerd bij de volgende presentaties:
-
-- [External Presentation 1](assets/other/ex-pres1.pdf)
-- [Learning Lab](assets/other/ll-pres.pdf)
-
-## 8.2 Writing paper
-
-Zahir, Brenno, Jaap en Yuri waren begonnen aan de paper terwijl ik nog bezig was met het prototypen. Nadat ik klaar was met het prototypen heb ik aangehaakt bij het helpen bij de paper. Wij hebben met zijn alle de paper zin voor zin grondig doorgenomen om te zorgen dat alles goed zou zijn.
