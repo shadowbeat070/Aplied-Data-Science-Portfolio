@@ -66,7 +66,7 @@ Ander Notebooks met korte uitleg die van toepassing zijn voor de portfolio zijn:
 >prediction model met de surprise library die op basis van ratings users gaat vergelijken en op basis daarvan voorspellingen maken. Er wordt gebruik gemaakt van de surprise library
 
 [Concept Visual for containers](notebooks/visual.py)
->concept grid voor di visualisatie van de container environment
+>concept grid voor de visualisatie van de container environment
 
 # 2. Datacamp courses
 
