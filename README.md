@@ -35,12 +35,12 @@
 Dit is mijn portfolio waar ik zal doornemen to all mijn contributies. Voor dit project is niet alleen een groeps research project uitgevoerd maar heb ik ook een indiviuele uitgevoerd aangezien ik en de rest mijn van mijn groep 2 verschillende stukjes aanpakte van het container project.
 
 Mijn contributie aan voor het schrijven van het research project vind je in deze 2 files
-[Research_Validatie](documenten/Research Paper ADS.pdf)
+[Research_Validatie](documenten/Research_Paper_ADS.pdf)
 [Conclusie_Discussie](documents/ADS_Research_v3.pdf)
 
 Ander Notebooks met korte uitleg die van toepassing zijn voor de portfolio zijn:
 
-[Visualisatie-Gif](notebooks/2023-01-13 14-16-55.mkv)
+[Visualisatie-Gif](notebooks/2023-01-13_14-16-55.mkv)
 >Visualisatie voor de container environment, de cirkel is de agent die leert om optimaal mogelijk de target container te pakken(rood) en dummy containers vermijden(groen en blauw)
 
 [Concept Create Users.csv](notebooks/Fakers.ipynb)
