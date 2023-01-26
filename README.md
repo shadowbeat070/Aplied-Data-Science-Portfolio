@@ -187,7 +187,7 @@ Ik heb vervolgens de volgende onderzoeken gelezen:
 - [recommendation-systems-explained](https://towardsdatascience.com/recommendation-systems-explained-a42fc60591ed)
 - [machine learning for recommending systems part 1](https://medium.com/recombee-blog/machine-learning-for-recommender-systems-part-1-algorithms-evaluation-and-cold-start-6f696683d0ed)
 - [machine learning for recommending systems part 2](https://medium.com/recombee-blog/machine-learning-for-recommender-systems-part-2-deep-recommendation-sequence-prediction-automl-f134bc79d66b)
-- [Notebook_Onderzoek](documents/Reccomender Reseasch.txt)
+- [Notebook_Onderzoek](documents/Reccomender_Reseasch.txt)
 
 
 
