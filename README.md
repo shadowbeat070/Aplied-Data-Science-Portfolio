@@ -249,6 +249,6 @@ Tijdens de internen presentaties nam manen mijn andere groepslede vaak het iniat
 ## 7.2 Writing paper
 
 Mijn contributie aan voor het schrijven van het research project vind je in deze 2 files
-[Research_Validatie](documenten/Research_Paper_ADS.pdf)
+[Research_Validatie](documents/Research_Paper_ADS.pdf)
 [Conclusie_Discussie](documents/ADS_Research_v3.pdf)
 
