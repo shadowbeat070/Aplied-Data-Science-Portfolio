@@ -149,7 +149,7 @@ Zoals hiervoor benoemd wordt er gebruik gemaakt de gridsearchcv door het feit da
 Zoals hiervoor benoemd is er een gridsearch gebruikt om tot de optimale hyper parameters te komen. De dataset bestod uit user id's, repect id's en de bijhorende rating. Deze dataset is gesplits in 0.75 aan trainen en 0.25 voor het testen. verder wordt de rmse, mae en de beste paramets geprint die uit de gridsearch zijn gebleken. verder is er een cross validation van 5 meegegeven.
 
 ## 4.4 Evaluating a model
-Het evalueren van het model werd gedaan door middel van veel verschillende modellen uittesten en te vergelijken. uiteindelijk bleek dat dit model de beste resultaten gaf: GridSearchCV(SVD, param_grid, measures=["rmse", "mae"], cv=5, refit = True)
+Het evalueren van het model werd gedaan door middel van veel verschillende modellen uittesten en te vergelijken. uiteindelijk bleek dat de beste resultaten kwamen uit: GridSearchCV(SVD, param_grid, measures=["rmse", "mae"], cv=5, refit = True)
 
 de hier onder staan de verschillende metrieken and de beste parameters die eruit zijn gekomen.
 
@@ -171,7 +171,7 @@ het uiteindelijke rating is 4.5 wat houdt in dat recept 48730 een goede aanbevel
 Voor de food boost predictie model die ik gemaakt heb is de uitkomst helaas niet gevisualiseerd. 
 
 voor het evalueren van het container project heb ik wel een visualisatie gemaakt. De visualisatie is een 5x5 grid waarbij de agent(cirkel) de target container moet bereiken(de rode container) en de dummy containers vermijden(groen en blauw).
-[Zie hier het notebook voor de visualisatie](notebooks/2023-01-13 14-16-55.mkv)
+[Zie hier het notebook voor de visualisatie](notebooks/2023-01-13_14-16-55.mkv)
 
 # 5. Domain knowledge
 
