@@ -128,11 +128,11 @@ Als scrum omgevingen zijn we elke week bij elkaar gekomen om de bespreken hoe ve
 
 ## 4.1 Selecting a model
 
-voor het foodboost project is er gebruik gemaakt van de gridsearchcv van de surprise library. De surprise library is gekozen aangezien de library bedoeld en gemaakt is om recommendation systemen te maken. gridsearchcv is gekozen omdat dit model de beste scores uiteidelijk gaf. andere modellen die zijn uitgeprobeerd zijn de knnwithmeans, knnbaseline, knnbasic en SVD. Verder Dit wordr ondersteund door de documentatie van die library https://surprise.readthedocs.io/en/stable/getting_started.html#tune-algorithm-parameters-with-gridsearchcv 
+voor het foodboost project is er gebruik gemaakt van de gridsearchcv van de surprise library. De surprise library is gekozen aangezien de library bedoeld en gemaakt is om recommendation systemen te maken. gridsearchcv is gekozen omdat dit techniek de beste scores uiteidelijk gaf. Andere modellen en technieken die zijn uitgeprobeerd zijn de knnwithmeans, knnbaseline, knnbasic en SVD. Verder wordt dit ondersteund door de documentatie van die library https://surprise.readthedocs.io/en/stable/getting_started.html#tune-algorithm-parameters-with-gridsearchcv 
 
 ## 4.2 Configuring a Model
 
-Zoals hiervoor benoemd wordt er gebruik gemaakt de gridsearchcv door het feit dat het model zelf kiest wat de best hyper parameters zijn om tot de laagste rmse te komen. De beste parameters waren dus uiteindelijk:
+Zoals hiervoor benoemd wordt er gebruik gemaakt de gridsearchcv door het feit dat de techniek zelf kiest wat de best hyper parameters door middel van cross validatie om tot de laagste rmse te komen. De beste hyper parameters waren dus uiteindelijk:
 
 ```json
 {
@@ -146,10 +146,10 @@ Zoals hiervoor benoemd wordt er gebruik gemaakt de gridsearchcv door het feit da
 
 ## 4.3 Training a model
 
-Zoals hiervoor benoemd is er een gridsearch gebruikt om tot de optimale hyper parameters te komen. De dataset bestod uit user id's, repect id's en de bijhorende rating. Deze dataset is gesplits in 0.75 aan trainen en 0.25 voor het testen. verder wordt de rmse, mae en de beste paramets geprint die uit de gridsearch zijn gebleken. verder is er een cross validation van 5 meegegeven.
+Zoals hiervoor benoemd is er een gridsearch gebruikt om tot de optimale hyper parameters te komen. De dataset bestaat uit user id's, recept id's en de bijhorende ratings. Deze dataset is gesplits in 0.75 aan trainen en 0.25 voor het testen. Verder wordt de rmse, mae en de beste parameters geprint die uit de gridsearch zijn gebleken met een cros validatie van 5.
 
 ## 4.4 Evaluating a model
-Het evalueren van het model werd gedaan door middel van veel verschillende modellen uittesten en te vergelijken. uiteindelijk bleek dat de beste resultaten kwamen uit: GridSearchCV(SVD, param_grid, measures=["rmse", "mae"], cv=5, refit = True)
+Het evalueren van de gridsearch werd gedaan door middel van veel verschillende modellen en hyperparameters te testen en te vergelijken. Uiteindelijk bleek dat de beste resultaten kwamen uit: GridSearchCV(SVD, param_grid, measures=["rmse", "mae"], cv=5, refit = True)
 
 de hier onder staan de verschillende metrieken and de beste parameters die eruit zijn gekomen.
 
@@ -170,7 +170,7 @@ het uiteindelijke rating is 4.5 wat houdt in dat recept 48730 een goede aanbevel
 
 Voor de food boost predictie model die ik gemaakt heb is de uitkomst helaas niet gevisualiseerd. 
 
-voor het evalueren van het container project heb ik wel een visualisatie gemaakt. De visualisatie is een 5x5 grid waarbij de agent(cirkel) de target container moet bereiken(de rode container) en de dummy containers vermijden(groen en blauw).
+Voor het evalueren van het container project heb ik wel een visualisatie gemaakt. De visualisatie is een 5x5 grid waarbij de agent(cirkel) de target container moet bereiken(de rode container) en de dummy containers vermijden(groen en blauw).
 [Zie hier het notebook voor de visualisatie](notebooks/2023-01-13_14-16-55.mkv)
 
 # 5. Domain knowledge
